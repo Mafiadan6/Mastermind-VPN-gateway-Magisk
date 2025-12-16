@@ -1,0 +1,6 @@
+id=vpn-gateway
+name=Universal VPN Gateway
+version=5.1-mod
+versionCode=3
+author=mastermind
+description=Route all LAN & tethering (Wi-Fi, Bluetooth, USB) traffic through VPN.
