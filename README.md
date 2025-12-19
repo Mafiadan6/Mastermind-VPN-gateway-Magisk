@@ -79,25 +79,15 @@ cd Mastermind-VPN-gateway-Magisk
 
 Network Flow
 
-```mermaid
-graph LR
-    A[Client Devices] --> B[Phone Tethering]
-    B --> C{Universal VPN Gateway}
-    C --> D[VPN Tunnel tun0]
-    D --> E[Internet]
-    
-    F[Real IP] -.->|Blocked| A
-    D -->|VPN IP Only| A
-    
-    subgraph Tethering Methods
-        G[Wi-Fi wlan0]
-        H[Bluetooth bnep0]
-        I[USB usb0/eth0]
-    end
-    
-    B --> G
-    B --> H
-    B --> I
+```
+Client Devices → Phone Tethering → Universal VPN Gateway → VPN Tunnel (tun0) → Internet
+      ↑                                      ↑
+   VPN IP only                       Real IP blocked
+   
+Tethering Methods:
+- Wi-Fi (wlan0)
+- Bluetooth (bnep0) 
+- USB (usb0/eth0)
 ```
 
 Technical Implementation
